@@ -22,9 +22,11 @@ function runTimer() {
     let currentTime = leadingZero(timer[0]) + ":" + leadingZero(timer[1]) + ":" + leadingZero(timer[2]);
     theTimer.innerHTML = currentTime;
     let msec = timer[3]++ / 100;
-/*    timer[0] = Math.floor(msec / 3600);
+/*  To show hours:minutes:seconds
+    timer[0] = Math.floor(msec / 3600);
     timer[1] = Math.floor((msec - (timer[0] * 3600)) / 60);
     timer[2] = Math.floor(msec - (timer[0] * 3600) - timer[1] * 60);*/
+// Now it is    minutes:seconds:mlsec
     timer[0] = Math.floor(msec/60);
     timer[1] = Math.floor(msec - (timer[0]/60));
     timer[2] = Math.floor((msec * 100) - (timer[1]*100) - (timer[0]*6000));
